@@ -1,0 +1,33 @@
+Description: Disable bundler usage
+Author: Miguel Landaeta <nomadium@debian.org>
+Forwarded: no
+Last-Update: 2017-11-04
+
+--- a/Rakefile
++++ b/Rakefile
+@@ -2,16 +2,16 @@
+ 
+ require 'open3'
+ 
+-require 'bundler'
+-require 'bundler/gem_tasks'
++# require 'bundler'
++# require 'bundler/gem_tasks'
+ 
+-begin
+-  Bundler.setup(:default, :development)
+-rescue Bundler::BundlerError => e
+-  warn e.message
+-  warn 'Run `bundle install` to install missing gems'
+-  exit e.status_code
+-end
++# begin
++#   Bundler.setup(:default, :development)
++# rescue Bundler::BundlerError => e
++#   warn e.message
++#   warn 'Run `bundle install` to install missing gems'
++#   exit e.status_code
++# end
+ 
+ require 'rspec/core/rake_task'
+ 
